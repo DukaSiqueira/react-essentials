@@ -1,4 +1,5 @@
 import logoReact from './assets/react-core-concepts.png';
+import componetsImg from './assets/components.png';
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -22,12 +23,38 @@ function Header() {
   );
 }
 
+function CoreConept(props) {
+  const image = props.image || 'https://via.placeholder.com/150';
+  const title = props.title || 'Default Title';
+  const description = props.description || 'Default Description';
+  return (
+    <li>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
+    </li>
+  );
+}
+
 function App() {
   return (
     <div>
       <Header />
       <main>
         <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <h2>Core Concepts</h2>
+          <ul>
+            <CoreConept 
+              title="Components" 
+              description="The core UI building blocks of a React application."
+              image={componetsImg}
+            />
+            <CoreConept />
+            <CoreConept />
+            <CoreConept />
+          </ul>
+        </section>
       </main>
     </div>
   );
