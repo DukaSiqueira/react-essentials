@@ -1,41 +1,6 @@
-import logoReact from './assets/react-core-concepts.png';
+import Header from './components/Header.jsx';
 import { CORE_CONCEPTS } from './data.js';
-
-const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
-
-function genRandomInt(max) {
-  return Math.floor(Math.random() * (max + 1));
-}
-
-function Header() {
-  const randomIndex = genRandomInt(reactDescriptions.length - 1);
-  const randomDescription = reactDescriptions[randomIndex];
-
-  return (
-    <header>
-      <img src={logoReact} alt="Stylized atom" />
-      <h1>React Essentials</h1>
-      <p>
-        {randomDescription} React concepts you will need for almost any app you are
-        going to build!
-      </p>
-    </header>
-  );
-}
-
-// CoreConcept component with destructuring props and default values
-function CoreConept({
-  image = 'https://via.placeholder.com/150', 
-  title = 'Default Title', 
-  description = 'Default Description'}) {
-  return (
-    <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </li>
-  );
-}
+import CoreConept from './components/CoreConcept.jsx';
 
 function App() {
   return (
@@ -52,7 +17,6 @@ function App() {
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             />
-
             {/* Destructured example */}
             <CoreConept{...CORE_CONCEPTS[1]} />
 
