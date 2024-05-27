@@ -1,5 +1,5 @@
 import logoReact from './assets/react-core-concepts.png';
-import componetsImg from './assets/components.png';
+import { CORE_CONCEPTS } from './data.js';
 
 const reactDescriptions = ['Fundamental', 'Crucial', 'Core'];
 
@@ -23,15 +23,16 @@ function Header() {
   );
 }
 
-function CoreConept(props) {
-  const image = props.image || 'https://via.placeholder.com/150';
-  const title = props.title || 'Default Title';
-  const description = props.description || 'Default Description';
+// CoreConcept component with destructuring props
+function CoreConept({image, title, description}) {
+  const imageComp = image || 'https://via.placeholder.com/150';
+  const titleComp = title || 'Default Title';
+  const descriptionComp = description || 'Default Description';
   return (
     <li>
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
+      <img src={imageComp} alt={titleComp} />
+      <h3>{titleComp}</h3>
+      <p>{descriptionComp}</p>
     </li>
   );
 }
@@ -45,14 +46,19 @@ function App() {
         <section id="core-concepts">
           <h2>Core Concepts</h2>
           <ul>
+            {/* Verbose example */}
             <CoreConept 
-              title="Components" 
-              description="The core UI building blocks of a React application."
-              image={componetsImg}
+              title={CORE_CONCEPTS[0].title}
+              description={CORE_CONCEPTS[0].description}
+              image={CORE_CONCEPTS[0].image}
             />
-            <CoreConept />
-            <CoreConept />
-            <CoreConept />
+
+            {/* Destructured example */}
+            <CoreConept{...CORE_CONCEPTS[1]} />
+
+            <CoreConept{...CORE_CONCEPTS[2]} />
+
+            <CoreConept{...CORE_CONCEPTS[3]} />
           </ul>
         </section>
       </main>
