@@ -23,16 +23,16 @@ function Header() {
   );
 }
 
-// CoreConcept component with destructuring props
-function CoreConept({image, title, description}) {
-  const imageComp = image || 'https://via.placeholder.com/150';
-  const titleComp = title || 'Default Title';
-  const descriptionComp = description || 'Default Description';
+// CoreConcept component with destructuring props and default values
+function CoreConept({
+  image = 'https://via.placeholder.com/150', 
+  title = 'Default Title', 
+  description = 'Default Description'}) {
   return (
     <li>
-      <img src={imageComp} alt={titleComp} />
-      <h3>{titleComp}</h3>
-      <p>{descriptionComp}</p>
+      <img src={image} alt={title} />
+      <h3>{title}</h3>
+      <p>{description}</p>
     </li>
   );
 }
