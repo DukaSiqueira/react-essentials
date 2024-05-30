@@ -10,7 +10,6 @@ function genRandomInt(max) {
 export default function Header() {
   const randomIndex = genRandomInt(reactDescriptions.length - 1);
   const randomDescription = reactDescriptions[randomIndex];
-  {PaymentResponse.children}
 
   return (
     <header>
