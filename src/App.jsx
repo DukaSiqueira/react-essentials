@@ -1,12 +1,16 @@
+// React Hook
+import { useState } from 'react';
+
 import Header from './components/Header/Header.jsx';
 import { CORE_CONCEPTS } from './data.js';
 import CoreConept from './components/CoreConcept/CoreConcept.jsx';
 import TapButton from './components/TapButton/TapButton.jsx';
 
 function App() {
+  const [ selectedTopic, setSelectedTopic ] = useState('Please select a tab')
 
   function handleSelect(selectedButton) {
-    console.log('Button clicked - ', selectedButton);
+    setSelectedTopic(`You selected ${selectedButton}`);
   }
 
   return (
@@ -37,6 +41,7 @@ function App() {
             <TapButton onSelect={() => handleSelect('props')}>Props</TapButton>
             <TapButton onSelect={() => handleSelect('state')}>State</TapButton>
           </menu>
+          {selectedTopic}
         </section>
       </main>
     </div>
