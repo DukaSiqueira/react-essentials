@@ -1,6 +1,7 @@
 import Header from './components/Header/Header.jsx';
 import { CORE_CONCEPTS } from './data.js';
 import CoreConept from './components/CoreConcept/CoreConcept.jsx';
+import TapButton from './components/TapButton/TapButton.jsx';
 
 function App() {
   return (
@@ -19,11 +20,18 @@ function App() {
             />
             {/* Destructured example */}
             <CoreConept{...CORE_CONCEPTS[1]} />
-
             <CoreConept{...CORE_CONCEPTS[2]} />
-
             <CoreConept{...CORE_CONCEPTS[3]} />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TapButton>Components</TapButton>
+            <TapButton>JSX</TapButton>
+            <TapButton>Props</TapButton>
+            <TapButton>State</TapButton>
+          </menu>
         </section>
       </main>
     </div>
