@@ -11,8 +11,6 @@ Welcome to the **React Essentials** project! This repository covers the essentia
   - [Installation](#installation)
   - [Running the Project](#running-the-project)
 - [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
