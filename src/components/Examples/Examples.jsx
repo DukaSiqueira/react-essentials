@@ -1,6 +1,7 @@
 // React Hook
 import { useState } from "react";
 
+import Section from "../Section/Section";
 import TapButton from "../TapButton/TapButton";
 import { EXAMPLES } from "../../data";
 
@@ -12,30 +13,30 @@ export default function Examples() {
     }
 
     return (
-        <section id="examples">
+        <Section id="examples">
             <h2>Examples</h2>
             <menu>
                 <TapButton
                 isSelected={selectedTopic === "components"}
-                onSelect={() => handleSelect("components")}
+                onClick={() => handleSelect("components")}
                 >
                 Components
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "jsx"}
-                onSelect={() => handleSelect("jsx")}
+                onClick={() => handleSelect("jsx")}
                 >
                 JSX
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "props"}
-                onSelect={() => handleSelect("props")}
+                onClick={() => handleSelect("props")}
                 >
                 Props
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "state"}
-                onSelect={() => handleSelect("state")}
+                onClick={() => handleSelect("state")}
                 >
                 State
                 </TapButton>
@@ -51,6 +52,6 @@ export default function Examples() {
                 </pre>
                 </div>
             )}
-        </section>
+        </Section>
     );
 }
