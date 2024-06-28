@@ -4,8 +4,7 @@ import CoreConept from "../CoreConcept/CoreConcept.jsx";
 
 export default function CoreConpets() {
     return (
-        <Section id="core-concepts">
-            <h2>Core Concepts</h2>
+        <Section id="core-concepts" title={'Core Concepts'}>
             <ul>
             {CORE_CONCEPTS.map((concept) => (
                 <CoreConept key={concept.title} {...concept} />
