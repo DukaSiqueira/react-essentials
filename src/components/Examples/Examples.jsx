@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Section from "../Section/Section";
 import TapButton from "../TapButton/TapButton";
-import { EXAMPLES } from "../../data";
+import Example from "../Example/Example";
 
 export default function Examples() {
     const [selectedTopic, setSelectedTopic] = useState();
@@ -19,37 +19,31 @@ export default function Examples() {
                 isSelected={selectedTopic === "components"}
                 onClick={() => handleSelect("components")}
                 >
-                Components
+                    Components
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "jsx"}
                 onClick={() => handleSelect("jsx")}
                 >
-                JSX
+                    JSX
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "props"}
                 onClick={() => handleSelect("props")}
                 >
-                Props
+                    Props
                 </TapButton>
                 <TapButton
                 isSelected={selectedTopic === "state"}
                 onClick={() => handleSelect("state")}
                 >
-                State
+                    State
                 </TapButton>
             </menu>
             {!selectedTopic ? (
                 <p>Please select a topic. </p>
             ) : (
-                <div id="tab-content">
-                <h3>{EXAMPLES[selectedTopic].title}</h3>
-                <p>{EXAMPLES[selectedTopic].description}</p>
-                <pre>
-                    <code>{EXAMPLES[selectedTopic].code}</code>
-                </pre>
-                </div>
+                <Example selectedTopic={selectedTopic} />
             )}
         </Section>
     );
